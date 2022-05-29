@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Product;
 
 use App\Models\Product\Product;
+use App\Repositories\Types\TypeRepository;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
@@ -24,14 +25,17 @@ class ProductCrudCrudController extends CrudController
         CRUD::setModel(Product::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/product');
         CRUD::setEntityNameStrings('product', 'Products');
+        
+        $keys = [
+            1
+        ];
+        $this->TypeRepository = resolve(TypeRepository::class);
+        $this->options = collect($this->TypeRepository->getTypesByParentIDs($keys, false))->groupBy('parent_id');
+        view()->share([
+            'Productcategories'   => $this->options[1]->pluck('text','value'),
+        ]);
     }
 
-    /**
-     * Define what happens when the List operation is loaded.
-     * 
-     * @see  https://backpackforlaravel.com/docs/crud-operation-list-entries
-     * @return void
-     */
     protected function setupListOperation()
     {
         CRUD::addFilter([
@@ -122,6 +126,16 @@ class ProductCrudCrudController extends CrudController
         //     'color_picker_options' => ['customClass' => 'custom-class'],
         //     'wrapper' => $colMd6
         // ]);
+        CRUD::addField([
+            'name'      => 'priority',
+            'label'     => trans('flexi.priority'),
+            'type'      => 'select2_from_array',
+            'allows_null' => false,
+            'options'   =>   $this->options[1]->pluck('text','value'),
+            'default' => 'Normal',
+            'wrapper'   => $colMd6
+        ]);
+
         
         CRUD::addField([
             'name'      => 'description',

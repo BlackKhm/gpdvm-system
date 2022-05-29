@@ -75,6 +75,19 @@ class Product extends Model
             $disk = "uploads";
         });
     }
+
+    public function type()
+    {
+        return $this->belongsTo('App\Models\Types\Type', 'category', 'id');
+    }
+    public function contact()
+    {
+        return $this->belongsTo('App\Models\Contacts\Contact', 'created_by','id');
+    }
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Types\Type', 'category')->where('name', 'Product categories');
+    }
     
 
     /*
