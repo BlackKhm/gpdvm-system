@@ -25,12 +25,12 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'v8.6.12',
-    'version' => '8.6.12.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => 'd73af4df459e4b9e22a28b9d9e08faa5a230c1eb',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -44,6 +44,24 @@ private static $installed = array (
       ),
       'reference' => '73e5b88775c64ccc0b84fb60836b30dc9d92ac4a',
     ),
+    'backpack/crud' => 
+    array (
+      'pretty_version' => '4.1.69',
+      'version' => '4.1.69.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '248e2e034cedcffe01732cdce01fb3d1ecad9ffa',
+    ),
+    'backpack/generators' => 
+    array (
+      'pretty_version' => 'v3.1.13',
+      'version' => '3.1.13.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ca7f840d43de6e649fd2b22ef9a37cb2459dbc21',
+    ),
     'brick/math' => 
     array (
       'pretty_version' => '0.9.3',
@@ -53,12 +71,30 @@ private static $installed = array (
       ),
       'reference' => 'ca57d18f028f84f777b2168cd1911b0dee2343ae',
     ),
+    'composer/package-versions-deprecated' => 
+    array (
+      'pretty_version' => '1.11.99.5',
+      'version' => '1.11.99.5',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'b4f54f74ef3453349c24a845d22392cd31e65f1d',
+    ),
     'cordoval/hamcrest-php' => 
     array (
       'replaced' => 
       array (
         0 => '*',
       ),
+    ),
+    'creativeorange/gravatar' => 
+    array (
+      'pretty_version' => 'v1.0.22',
+      'version' => '1.0.22.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '0eed243a16bcd01e618036f9b8021526ea26f64a',
     ),
     'davedevelopment/hamcrest-php' => 
     array (
@@ -75,6 +111,42 @@ private static $installed = array (
       array (
       ),
       'reference' => '0992cc19268b259a39e86f296da5f0677841f42c',
+    ),
+    'doctrine/cache' => 
+    array (
+      'pretty_version' => '2.2.0',
+      'version' => '2.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '1ca8f21980e770095a31456042471a57bc4c68fb',
+    ),
+    'doctrine/dbal' => 
+    array (
+      'pretty_version' => '3.3.6',
+      'version' => '3.3.6.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9e7f76dd1cde81c62574fdffa5a9c655c847ad21',
+    ),
+    'doctrine/deprecations' => 
+    array (
+      'pretty_version' => 'v1.0.0',
+      'version' => '1.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '0e2a4f1f8cdfc7a92ec3b01c9334898c806b30de',
+    ),
+    'doctrine/event-manager' => 
+    array (
+      'pretty_version' => '1.1.1',
+      'version' => '1.1.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '41370af6a30faa9dc0368c4a6814d596e81aba7f',
     ),
     'doctrine/inflector' => 
     array (
@@ -455,12 +527,12 @@ private static $installed = array (
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => 'v8.6.12',
-      'version' => '8.6.12.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'd73af4df459e4b9e22a28b9d9e08faa5a230c1eb',
     ),
     'laravel/sail' => 
     array (
@@ -613,6 +685,13 @@ private static $installed = array (
       ),
       'reference' => '8b610eef8582ccdc05d8f2ab23305e2d37049461',
     ),
+    'ocramius/package-versions' => 
+    array (
+      'replaced' => 
+      array (
+        0 => '1.11.99',
+      ),
+    ),
     'opis/closure' => 
     array (
       'pretty_version' => '3.6.3',
@@ -739,6 +818,24 @@ private static $installed = array (
       ),
       'reference' => '12bc8879fb65aef2138b26fc633cb1e3620cffba',
     ),
+    'prologue/alerts' => 
+    array (
+      'pretty_version' => '0.4.8',
+      'version' => '0.4.8.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'a6412e318c0171526bc8b25ef597f2cc61f5b800',
+    ),
+    'psr/cache' => 
+    array (
+      'pretty_version' => '1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'd11b50ad223250cf17b86e38383413f5a6764bf8',
+    ),
     'psr/container' => 
     array (
       'pretty_version' => '1.1.2',
@@ -832,8 +929,8 @@ private static $installed = array (
     array (
       'provided' => 
       array (
-        0 => '1.0|2.0',
-        1 => '1.0.0 || 2.0.0 || 3.0.0',
+        0 => '1.0.0 || 2.0.0 || 3.0.0',
+        1 => '1.0|2.0',
       ),
     ),
     'psr/simple-cache' => 
