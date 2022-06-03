@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Tkservices\KtservicesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [KtservicesController::class, 'index'])->name('index');
+Route::get('/service', [KtservicesController::class, 'service'])->name('service');
+Route::get('/network', [KtservicesController::class, 'network'])->name('network');
+Route::get('/knowledge_health', [KtservicesController::class, 'knowledgeHealth'])->name('knowledgeHealth');
