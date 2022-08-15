@@ -72,7 +72,7 @@ return [
     // ------
 
     // Menu logo. You can replace this with an <img> tag if you have a logo.
-    'project_logo'   => '<img src="https://staging.z1mobile.com/assets/Zillennium-logo.png">',
+    'project_logo'   => '<img src="https://online.vtrustappraisal.com/assets/default-photos/indication-plus.svg">',
 
     // Show / hide breadcrumbs on admin panel pages.
     'breadcrumbs' => true,
