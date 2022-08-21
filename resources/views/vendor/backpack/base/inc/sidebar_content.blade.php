@@ -8,6 +8,7 @@
                 <i class="nav-icon lab la-product-hunt"></i><span>Product List</span>
             </a>
         </li>
+        <li class='nav-item'><a class='nav-link' href='{{ backpack_url('property') }}'><i class='nav-icon la la-question'></i> Properties</a></li>
     </ul>
 </li>
 
