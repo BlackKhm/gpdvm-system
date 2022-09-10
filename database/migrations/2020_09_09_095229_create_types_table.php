@@ -33,15 +33,16 @@ class CreateTypesTable extends Migration
             $table->integer('lft')->nullable();
             $table->integer('rgt')->nullable();
             $table->integer('depth')->nullable();
+            $table->boolean('require_authentication')->default(0)->nullable();
+            $table->boolean('display_on_frontend')->default(1)->nullable();
+            $table->boolean('display_on_backend')->default(1)->nullable();
+            $table->integer('order')->nullable();
+            $table->string('name_khm')->nullable();
             $table->bigInteger('created_by')->unsigned()->nullable();
             $table->bigInteger('updated_by')->unsigned()->nullable();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('deleted_at')->nullable();
-            $table->boolean('require_authentication')->default(0)->nullable();
-            $table->boolean('display_on_frontend')->default(1)->nullable();
-            $table->boolean('display_on_backend')->default(1)->nullable();
-            // $table->primary('id');
         });
     }
 

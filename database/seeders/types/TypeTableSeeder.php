@@ -4,63 +4,54 @@ namespace Database\Seeders\types;
 
 use App\Models\Types\Type;
 use Illuminate\Database\Seeder;
+use App\Traits\Type\CreateTypeSeederTrait;
 
 class TypeTableSeeder extends Seeder
 {
+    use CreateTypeSeederTrait;
     /**
      * Run the database seeds.
-     * php artisan db:seed --class=TypeTableSeeder
+     * 
+     * php artisan db:seed --class="Database\Seeders\types\TypeTableSeeder"
      * @return void
      */
     public function run()
     {
-        Type::truncate();
-        $arrParents = [
-            '1'     =>  'Product categories',
+        request()->merge(['disableParentChildrenEvent' => true]);
+
+        $arr = [
+            1 => [
+                "name"      => "Product categories", // Name of parent
+                "name_khm"  => "",
+                "code"      => "",
+                "auto_code" => true
+            ]
         ];
-        $this->arrForCreate($arrParents);
-        $this->runLoop( 1, [
-            'Man' => ['Nike', 'Adidas', 'Petro']
-        ],'category');
-    }
 
+        $this->checkIfHaveParentAndCreate($arr);
+        $this->forceDeleteWhereParentId([1]); // optional place with other
 
-    private function arrForCreate($arr)
-    {
-        foreach($arr as $k => $val){
-            Type::firstOrCreate(['id'=>$k,'name' => $val, 'parent_id' => 0,'option' => true,'category' => true]);
-        }
-    }
+        $arrMaintenanceStatus = [
+            [
+                "name"      => "Already maintenace",
+                "name_khm"  => "",
+                "code"      => "",
+                "auto_code" => true
+            ],
+            [
+                "name"      => "Plan from maintenance",
+                "name_khm"  => "",
+                "code"      => "",
+                "auto_code" => true
+            ],
+            [
+                "name"      => "Under maintenance",
+                "name_khm"  => "",
+                "code"      => "",
+                "auto_code" => true
+            ]
+        ];
 
-    private function runLoop($parentValue, $children = [], $option)
-    {
-
-        if (!$parentValue) {
-            return false;
-        }
-        $option_check = 0;
-        $category_check = 0;
-
-        if($option == 'all'){
-            $option_check = 1;
-            $category_check = 1;
-        }elseif($option == 'option') {
-            $option_check = 1;
-        }else{
-            $category_check = 1;
-        }
-
-        if (is_array($children) && count($children)) {
-            foreach ($children as $key => $value) :
-                if (is_array($value) && count($value)) {
-                    $grand_children = Type::firstOrCreate(['name' => $key, 'parent_id' => $parentValue,'option' => $option_check,'category' => $category_check]);
-                    foreach ($value as $kk => $vv) :
-                        Type::firstOrCreate(['name' => $vv, 'parent_id' => $grand_children->id,'option' => $option_check,'category' => $category_check]);
-                    endforeach;
-                } else {
-                    Type::firstOrCreate(['name' => $value, 'parent_id' => $parentValue,'option' => $option_check,'category' => $category_check]);
-                }
-            endforeach;
-        }
+        $this->runLooping(1 , $arrMaintenanceStatus , 'option');
     }
 }

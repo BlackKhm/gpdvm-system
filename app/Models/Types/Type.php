@@ -79,8 +79,10 @@ class Type extends Model
         'lft' => 'integer',
         'rgt' => 'integer',
         'depth' => 'integer',
+        'order',
+        'name_khm',
         'created_by' => 'integer',
-        'updated_by' => 'integer'
+        'updated_by' => 'integer',
     ];
 
     /*
