@@ -5,6 +5,9 @@
 <head>
   @include(backpack_view('inc.head'))
   {{-- <link rel="manifest" href="{{ asset('manifest.json') }}"> --}}
+
+	<link rel="stylesheet" type="text/css" href="{{ asset("css/app.css")}}">
+  
 </head>
 
 <body class="{{ config('backpack.base.body_class') }}">
@@ -50,15 +53,6 @@
 
   @include(backpack_view('inc.scripts'))
 
-  @php
-    // baseURL: '{{ route("api.v2.vtrust_reports.index") }}',
-    // http://192.168.100.16:9999/api/v2/vtrust_reports
-    // baseURL: '{{ env("REPORT_URL", "") . "/api/v2/vtrust_reports" }}',
-    // $route = env('REPORT_URL', '') . '/api/v2/vtrust_reports';
-    // $url = Auth::user() ? $route . "?account_id=" . optional(Auth::user()->contact)->account_id : $route;
-    // $url = Auth::user() ? 'http://127.0.0.1:9999/api/v2/vtrust_reports' . "?account_id=" . optional(Auth::user()->contact)->account_id : 'http://127.0.0.1:9999/api/v2/vtrust_reports';
-    // baseURL: "{{ env('REPORT_URL', '') . 'api/v2/vtrust_reports' }}",
-  @endphp
   <script>
       window.switchForm = component => {
         var value = component.val();

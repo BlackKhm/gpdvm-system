@@ -1,9 +1,9 @@
 @extends(backpack_view('blank'))
 
 @section('content')
-    <div class="container-fluid animated fadeIn">
+    <div class="container-fluid  bg-white">
         <div class="row mt-3">
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-lg-3 mt-4">
                 <div class="card text-white bg-primary mb-2">
                     <div class="card-body">
                         <a class="text-white" href="https://dev.z1platform.com/admin/docs-api-v2">
@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-lg-3 mt-4">
                 <div class="card text-white bg-warning mb-2">
                     <div class="card-body">
                         <a class="text-white" href="https://xd.adobe.com/view/85a5cd85-9921-477b-7e41-e4af001a335f-f394/"
@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-lg-3 mt-4">
                 <div class="card text-white bg-success border-0 mb-2">
                     <div class="card-body">
                         <a class="text-white" href="https://dev.z1platform.com/api-explorer">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-lg-3 mt-4">
                 <div class="card text-white bg-danger mb-2">
                     <div class="card-body">
                         <div class="text-value">16 days</div>
