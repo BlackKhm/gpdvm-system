@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Contacts;
+namespace App\Http\Controllers\Admin\Accounts;
 
-use App\Models\Contacts\Contact;
+use App\Models\Accounts\Account;
 use App\Http\Requests\Accounts\AccountCreateRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
-class ContactCrudController extends CrudController
+class AccountCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -17,9 +17,9 @@ class ContactCrudController extends CrudController
 
     public function setup()
     {
-        CRUD::setModel(Contact::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/contact');
-        CRUD::setEntityNameStrings('contact', 'contacts');
+        CRUD::setModel(Account::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/account');
+        CRUD::setEntityNameStrings('account', 'accounts');
     }
 
     protected function setupListOperation()

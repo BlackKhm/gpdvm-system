@@ -1,7 +1,7 @@
 <!-- This file is used to store topbar (right) items -->
 
-<li class="nav-item d-md-down-none"><a class="nav-link" href="#"><i class="la la-bell"></i><span class="badge badge-pill badge-danger">1</span></a></li>
-<li class="nav-item dropdown">
+<li class="nav-item d-md-down-none mb-2"><a class="nav-link" href="#"><i class="la la-bell"></i><span class="badge badge-pill badge-danger">1</span></a></li>
+<li class="nav-item dropdown mb-3">
     <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
       <img class="img-avatar" src="https://d3mdebq4ntr9r6.cloudfront.net/eyJidWNrZXQiOiJ6MS1wcm9kLXMzIiwia2V5IjoiejFfcHJvZHVjdGlvblwvdXBsb2Fkc1wvaW1hZ2VzXC8yMDIxMDFcLzEyYTViNWNkN2Y1MTgzMDY5YjRhZWYyNDhiZjI4ZTAwLnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTUwLCJoZWlnaHQiOjE1MCwiZml0IjoiaW5zaWRlIn19fQ==" alt="{{ backpack_auth()->user()->name }}">
     </a>
@@ -11,7 +11,7 @@
     </div>
   </li>
   <span class="custom-padding d-none d-md-block">
-    <p class="mb-0 mr-4" style="font-size: 13px"><strong>{{ backpack_auth()->user()->name }}</strong></p>
+    <p class="mb-0 mr-4 mb-3" style="font-size: 13px"><strong>{{ backpack_auth()->user()->name }}</strong></p>
 </span>
 
 

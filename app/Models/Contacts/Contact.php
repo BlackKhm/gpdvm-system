@@ -11,8 +11,8 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
 class Contact extends Model
 {
     use CrudTrait;
-    use CreateUpdateByTrait;
-    use SoftDeletes;
+    // use CreateUpdateByTrait;
+    // use SoftDeletes;
     use BaseModelTrait;
 
     /*
@@ -45,7 +45,8 @@ class Contact extends Model
         'address',
         'zip_postalcode',
         'latitude',
-        'longitude'
+        'longitude',
+        'deleted_at'
     ];
     protected $casts = [
         'id' => 'integer',
@@ -75,24 +76,11 @@ class Contact extends Model
     {
         return $this->belongsTo(config('backpack.base.user_model_fqn'));
     }
-
-    public function products()
-    {
-        return $this->hasMany('App\Models\Products\Product');
-    }
-    public function addCart()
-    {
-        return $this->hasMany('App\Models\AddCarties\AddCart');
-    }
+   
     public function type()
     {
         return $this->belongsTo('App\Models\Types\Type', 'category', 'id');
     }
-
-    // public function contactCreatedBy()
-    // {
-    //     return $this->belongsTo('App\Models\Contacts\Contact', 'created_by','id');
-    // }
 
     /*
     |--------------------------------------------------------------------------
