@@ -19,6 +19,9 @@
         <li class='nav-item'><a class='nav-link' href='{{ backpack_url('property') }}'>
             <i class="nav-icon lab la-product-hunt"></i>Properties</a>
         </li>
+        <li class='nav-item'><a class='nav-link' href='{{ backpack_url('submitcase') }}'>
+            <i class="nav-icon lab la-product-hunt"></i>Indication Plus</a>
+        </li>
     </ul>
 </li>
 
